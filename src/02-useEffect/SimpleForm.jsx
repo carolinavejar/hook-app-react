@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
+import { Message } from "./Message";
 
 export const SimpleForm = () => {
 
     const [formState, setFormState] = useState({
-        username: 'caritop',
+        username: 'caritop2',
         email: 'caro@google.cl'
     });
 
@@ -20,7 +21,6 @@ export const SimpleForm = () => {
 
     // dispara efectos secundarios
     useEffect(() => {
-        console.log("se llamo use effect");
     }, [])
     
     // colocar arreglo vacio en useEffect, 
@@ -28,11 +28,9 @@ export const SimpleForm = () => {
     // componente es montado la primera vez (renderizado) 
 
     useEffect(() => {
-        console.log("form state change");
     }, [formState]);
 
     useEffect(() => {
-        console.log("email change");
     }, [email]);
     // colocar arreglo especificando que cambia en useEffect, 
     // solo será llamado cuando eso cambia
@@ -64,6 +62,9 @@ export const SimpleForm = () => {
                 />
             </div>
 
+            {
+                (username === "caritop2") && <Message></Message>
+            }
         </>
         
     )
