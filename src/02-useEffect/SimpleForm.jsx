@@ -21,7 +21,22 @@ export const SimpleForm = () => {
     // dispara efectos secundarios
     useEffect(() => {
         console.log("se llamo use effect");
-    })
+    }, [])
+    
+    // colocar arreglo vacio en useEffect, 
+    // para que solo sea ejecutado cuando el  
+    // componente es montado la primera vez (renderizado) 
+
+    useEffect(() => {
+        console.log("form state change");
+    }, [formState]);
+
+    useEffect(() => {
+        console.log("email change");
+    }, [email]);
+    // colocar arreglo especificando que cambia en useEffect, 
+    // solo será llamado cuando eso cambia
+
     
 
     return (
