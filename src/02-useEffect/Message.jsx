@@ -8,9 +8,9 @@ export const Message = () => {
             const coords = {x, y}
             console.log(coords);
         }
-        window.addEventListener('mousemove', onMouseMove);
+        // window.addEventListener('mousemove', onMouseMove);
         return () => {
-            window.removeEventListener('mousemove', onMouseMove);
+            // window.removeEventListener('mousemove', onMouseMove);
         }
     }, [])
     
