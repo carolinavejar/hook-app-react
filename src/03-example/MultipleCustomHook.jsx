@@ -1,10 +1,12 @@
 import { useFetch } from "../hooks/useFetch"
+import { useCounter } from "../hooks/useCounter"
 
 export const MultipleCUstonHook = () => {
   
-    const { data, isLoading, hasError } = useFetch('https://api.breakingbadquotes.xyz/v1/quotes/2')
+    const { counter, increment } = useCounter(1);
+    const { data, isLoading, hasError } = useFetch(`https://api.breakingbadquotes.xyz/v1/quotes/${counter}`)
   
-    console.log({ data, isLoading, hasError });
+    // console.log({ data, isLoading, hasError });
 
     const { author , quote } = !!data && data[0]
     // es como una condicional ,
@@ -34,7 +36,10 @@ export const MultipleCUstonHook = () => {
                     </blockquote>
                 )
             }
-             <button className="btn btn-primary">Next Quote</button>
+             <button
+            className="btn btn-primary" onClick={()=> increment()} disabled={isLoading}>
+                Next Quote
+            </button>
 
             
         </>
