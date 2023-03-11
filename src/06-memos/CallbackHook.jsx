@@ -7,9 +7,9 @@ export const CallbackHook = () => {
 
     // useCallback -> Sirve para memorizar funciones
     const incrementFather = useCallback(
-      () => {
+      (valueIncrement) => {
         // setCounter(counter +1)
-        setCounter((value) => value + 1 )
+        setCounter((value) => value + valueIncrement )
       },
       [],
     )
