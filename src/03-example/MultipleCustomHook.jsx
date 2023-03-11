@@ -1,5 +1,6 @@
-import { useFetch } from "../hooks/useFetch"
-import { useCounter } from "../hooks/useCounter"
+import { useFetch, useCounter} from "../hooks/"
+import { LoadingQuote } from "./LoadingQuote";
+import { Quote } from "./Quote";
 
 export const MultipleCUstonHook = () => {
   
@@ -23,18 +24,7 @@ export const MultipleCUstonHook = () => {
 
             {
                 ( isLoading) ?
-                (
-                    <div className="alert alert-info text-center">
-                        Loading
-                    </div>
-                ) : 
-                (
-                    <blockquote className="blockquote text-end">
-                        <p className="mb-1">{author}</p>
-                        <footer className="blockquote-footer">{quote}</footer>
-
-                    </blockquote>
-                )
+                <LoadingQuote></LoadingQuote> : <Quote props={author} quote={quote}></Quote>
             }
              <button
             className="btn btn-primary" onClick={()=> increment()} disabled={isLoading}>
