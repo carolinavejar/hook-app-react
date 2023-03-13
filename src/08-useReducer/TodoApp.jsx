@@ -14,8 +14,7 @@ export const TodoApp = () => {
         done: false
     }];
 
-    const handleNewTodo =(event, todo)=> {
-        event.preventDefault();
+    const handleNewTodo =( todo)=> {
         console.log("new todo", todo);
     }
 
@@ -38,7 +37,7 @@ export const TodoApp = () => {
             <div className="col-5">
                 <h5>agregar todo</h5>
                 <hr />
-                <TodoAdd handleNewTodo = { handleNewTodo }></TodoAdd>
+                <TodoAdd onNewTodo = { handleNewTodo }></TodoAdd>
             </div>
         </div>
             
