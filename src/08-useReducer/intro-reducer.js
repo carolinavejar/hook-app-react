@@ -5,7 +5,6 @@ const initialState = [{
 }];
 
 const todoReducer = ( state = initialState, action = {})=> {
-    // console.log(" to do reducer ");
 
     if ( action.type === '[TODO] add todo' ) {
         return [...state, action.payload]
@@ -27,5 +26,3 @@ const addTodoAction ={
 }
 
 todos = todoReducer(todos, addTodoAction);
-
-console.log({state: todos});
