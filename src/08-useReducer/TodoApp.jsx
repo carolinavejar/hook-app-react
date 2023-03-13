@@ -13,17 +13,44 @@ export const TodoApp = () => {
         done: false
     }];
 
-    const [state, dispatch] = useReducer( todoReducer, initialState )
+    const [todos, dispatch] = useReducer( todoReducer, initialState );
+    console.log(todos);
+    
     return (
         <>
-            <div>TodoApp</div>
-            <hr />
+        <div className="row">
+            <div className="col-7">
+                <h5>todo app: 10 <small>pendientes: 2</small></h5>
+                <hr />
 
-            <ul>
-                <li>item 1</li>
-                <li>item 2</li>
-                <li>item 3</li>
-            </ul>
+                <ul className="list-group ">
+                    {
+                        todos.map(todo=> (
+                            <li key= { todo.id } className="list-group-item d-flex justify-content-between">
+                                <span className="align-self-center">item 1</span>
+                                <button className="btn btn-danger">Borrar</button>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+
+            <div className="col-5">
+                <h5>agregar todo</h5>
+                <hr />
+                <form action="">
+                    <input type="text"
+                    placeholder="¿que hay que hacer'"
+                    className="form-control" />
+
+                    <button type="submit"
+                    className="btn btn-outline-primary mt-1">
+                        agregar
+                    </button>
+                </form>
+            </div>
+        </div>
+            
         </>
         
     )
