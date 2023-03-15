@@ -8,6 +8,20 @@ export const todoReducer = (initialState = [], action)=> {
             // console.log("DELETE TODO");
             return initialState.filter( todo =>  todo.id !== action.payload );
     
+        case 'TOGGLE TODO':
+            // console.log("DELETE TODO");
+            return initialState.map( todo => { 
+                if (todo.id === action.payload ) {
+                 
+                    return { 
+                        ...todo,
+                        done: !todo.done
+                    }
+                }
+
+                return todo;
+            });
+    
         default:
             // console.log("DEFAULT");
             initialState;
