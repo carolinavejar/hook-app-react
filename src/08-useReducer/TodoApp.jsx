@@ -21,10 +21,18 @@ export const TodoApp = () => {
         dispatch(action)
     }
 
+    const handleDeleteTodo =( id )=> {
+        
+        const action = {
+            type: 'DELETE TODO',
+            payload: id
+        }
+        // fn que va a usar para enviar la accion
+        dispatch(action)
+    }
     
 
     useEffect(() => {
-        console.log("guarda todos");
         localStorage.setItem('todos', JSON.stringify( todos ) )
     }, [ todos ])
     
@@ -36,7 +44,7 @@ export const TodoApp = () => {
                 <hr />
 
                 {/* Todo list */}
-                <ToDoList todos={ todos }></ToDoList>
+                <ToDoList onDeleteTodo= { handleDeleteTodo } todos={ todos }></ToDoList>
                 {/* Todo list */}
 
             </div>

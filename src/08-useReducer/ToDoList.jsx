@@ -1,6 +1,8 @@
 import { ToDoItem } from "./ToDoItem"
 
-export const ToDoList = ( { todos } ) => {
+export const ToDoList = ( { todos, onDeleteTodo } ) => {
+
+
 
     return (
         <ul className="list-group ">
@@ -9,7 +11,8 @@ export const ToDoList = ( { todos } ) => {
                 <ToDoItem key = { id }                     
                     id = { id } 
                     description = { description }
-                    done = { done } >
+                    done = { done }
+                    onDeleteTodo = { onDeleteTodo } >
                 </ToDoItem>
             ))
         }
