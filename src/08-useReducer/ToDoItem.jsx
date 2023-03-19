@@ -12,7 +12,7 @@ export const ToDoItem = ( { id,  description, done, onDeleteTodo, onToggleTodo }
                 { description }
             </span>
             <button 
-                onClick={ ()=> onDeleteTodo( id) }
+                onClick={ ()=> onDeleteTodo(id) }
                 className="btn btn-danger">Borrar</button>
         </li>
     )
