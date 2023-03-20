@@ -1,4 +1,4 @@
-import { render, render} from "@testing-library/react";
+import { render , screen } from "@testing-library/react";
 import { TodoApp } from '../../src/08-useReducer/TodoApp'
 import { useTodo } from "../../src/hooks/useTodo";
 
